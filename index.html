@@ -18,27 +18,28 @@
             <div class="col-lg-3">
                 <h3>Search for a City:</h3>
                 <div>
-                    <input placeholder="Enter a city">
+                    <input id="city-name" class="form-control" type="text" placeholder="Enter a city">
                     <div class="mt-1">
-                        <button type="button" class="btn btn-primary">Search <i class="fas fa-search-location"></i></button>
+                        <button id="search-btn" type="button" class="btn btn-primary">Search <i class="fas fa-search-location"></i></button>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary mt-1">Clear History <i class="far fa-times-circle"></i></button>
-                <form>Search Location History</form>
+                <button id="clear-btn" type="button" class="btn btn-primary mt-1">Clear History <i class="far fa-times-circle"></i></button>
+                <form id="city-history">Search Location History</form>
             </div>
             <div class="col-lg-8">
                 <div class="row">
-                    <div class="card border-dark mb-3 col-lg-12">
+                    <div id="current-weather" class="card border-dark mb-3 col-lg-12">
                         <div class="card-body text-dark">
-                          <h3 class="card-title">City Name (MM/DD/YYYY)<i class="fas fa-cloud-sun"></i></h3>
-                          <p class="card-text">Temp:75 degrees</p>
-                          <p class="card-text">Wind:6.67 MPH</p>
-                          <p class="card-text">Humidity: 46 %</p>
-                          <p class="card-text">UV Index: 0.47(with green)</p>
+                          <h3 id="city-name" class="city-name card-title">City Name (MM/DD/YYYY)</h3>
+                          <img id="weather-pic" alt="">
+                          <p id="temp" class="card-text">Temp:75 degrees</p>
+                          <p id="wind-speed" class="card-text">Wind:6.67 MPH</p>
+                          <p id="humidity" class="card-text">Humidity: 46 %</p>
+                          <p id="index" class="card-text">UV Index: 0.47(with green)</p>
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div id="fiveday" class="row">
                     <h3>5-Day Forcast:</h3>
                 </div>
                 <div class="row">
@@ -53,6 +54,7 @@
         </div>
     </div>
 
-<scrip src="./assets/js/script.js"></scrip>    
+    <scrip src="./assets/js/script.js"></scrip>    
 </body>
+
 </html>
