@@ -6,6 +6,7 @@ var citySearchInput = document.querySelector("#searched-city");
 var fivedayForcast = document.querySelector("#fiveday");
 var pastSearchBtn = document.querySelector("#past-search");
 var clearEl = document.getElementById("clear-history");
+var forecastT = document.querySelector("#forecast");
 
 var formSumbitHandler = function(event){
     event.preventDefault();
@@ -29,7 +30,7 @@ var saveSearch = function(){
 var getCityWeather = function(city){
     var apiKey = "941f4c56b7c9c603588882d255f6a98a"
 
-    var apiURL = "https://api.openweathermap.org/data/2.5/weather?q="+ city + "&appid=" + apiKey;
+    var apiURL = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&appid="+apiKey;
 
     fetch(apiURL)
     .then(function(response){
@@ -37,11 +38,13 @@ var getCityWeather = function(city){
             displayWeather(data, city);
         });
     });
+
+    console.log(city)
 };
 
 var getUvIndex = function(lat,lon){
     var apiKey = "941f4c56b7c9c603588882d255f6a98a"
-    var apiURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" +apiKey+ "&lat=" +lat + "&lon=" +lon;
+    var apiURL = "https://api.openweathermap.org/data/2.5/uvi?appid="+apiKey+"&lat="+lat+"&lon="+lon;
     fetch(apiURL)
     .then(function(response){
         response.json().then(function(data){
@@ -52,7 +55,7 @@ var getUvIndex = function(lat,lon){
 
 var get5Day = function(city){
     var apiKey = "941f4c56b7c9c603588882d255f6a98a"
-    var apiURL = "https://api.openweathermap.org/data/2.5/forecast?q=" +city+ "&units=imperial&appid=" +apiKey;
+    var apiURL = "https://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=imperial&appid="+apiKey;
 
     fetch(apiURL)
     .then(function(response){
@@ -121,6 +124,7 @@ var displayUvIndex = function(index){
 //display 5-day forcast
 var display5Day = function(weather){
     fivedayForcast.textContent = "";
+    forecastT.textContent = "5-Day Forecast:";
 
     var forecast = weather.list;
         for(var i=5; i < forecast.length; i=i+8){
@@ -141,7 +145,7 @@ var display5Day = function(weather){
        
        var forecastTempEl=document.createElement("div");
        forecastTempEl.classList = "col-3 text-center";
-       forecastTempEl.textContent = "Temperture: " + dailyForecast.main.temp + " °F";
+       forecastTempEl.textContent = "Temperture: " + dailyForecast.main.temp + "°F";
        foreCast.appendChild(forecastTempEl);
 
        var forecastHumEl=document.createElement("div");
