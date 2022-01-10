@@ -1,60 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/c18b2982a4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <title>Weather Dashboard</title>
 </head>
+
+
 <body>
     <header class="container-fluid text-center p-3 mb-2 bg-primary text-white">
         <h1>Weather Dashboard</h1>
     </header>
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-3">
-                <h3>Search for a City:</h3>
-                <div>
-                    <input id="city-name" class="form-control" type="text" placeholder="Enter a city">
-                    <div class="mt-1">
-                        <button id="search-btn" type="button" class="btn btn-primary">Search <i class="fas fa-search-location"></i></button>
+        <div class = "row">
+            <div class="col-lg-3 bg-light">
+                <h3 class="mt-1">Search for a City:</h3>
+                <form class = "input-gourp mb-3" id = "city-search">
+                    <input id="city" type = "text" class = "form-control"/>
+                    <div class="input-group-append mt-1">
+                        <button class = "btn btn-primary" type = "submit">Search
+                            <i class="fas fa-search-location"></i> 
+                        </button>
                     </div>
-                </div>
-                <button id="clear-btn" type="button" class="btn btn-primary mt-1">Clear History <i class="far fa-times-circle"></i></button>
-                <form id="city-history">Search Location History</form>
+                <form id="city-history"></form>
+                </form>
+                <div id="past-search"></div>
             </div>
             <div class="col-lg-8">
                 <div class="row">
-                    <div id="current-weather" class="card border-dark mb-3 col-lg-12">
-                        <div class="card-body text-dark">
-                          <h3 id="city-name" class="city-name card-title">City Name (MM/DD/YYYY)</h3>
-                          <img id="weather-pic" alt="">
-                          <p id="temp" class="card-text">Temp:75 degrees</p>
-                          <p id="wind-speed" class="card-text">Wind:6.67 MPH</p>
-                          <p id="humidity" class="card-text">Humidity: 46 %</p>
-                          <p id="index" class="card-text">UV Index: 0.47(with green)</p>
-                        </div>
+                    <div class = "selected-city d-flex col-lg-11 m-3" id = "current-forecast">
+                        <div>
+                            <h2 id="searched-city"></h2>
+                            <div id = "current-weather-container" class = "list-group"></div>
+                        </div>  
                     </div>
                 </div>
-                <div id="fiveday" class="row">
-                    <h3>5-Day Forcast:</h3>
-                </div>
-                <div class="row">
-                    <div class="card-body col-md-2 p-3 mb-2 bg-secondary text-white m-2 rounded">Day 1 Forcast</div>
-                    <div class="card-body col-md-2 p-3 mb-2 bg-secondary text-white m-2 rounded">Day 2 Forcast</div>
-                    <div class="card-body col-md-2 p-3 mb-2 bg-secondary text-white m-2 rounded">Day 3 Forcast</div>
-                    <div class="card-body col-md-2 p-3 mb-2 bg-secondary text-white m-2 rounded">Day 4 Forcast</div>
-                    <div class="card-body col-md-2 p-3 mb-2 bg-secondary text-white m-2 rounded">Day 5 Forcast</div>
-                </div>
-            
-            </div>     
+                <div class="row"> 
+                    <div>
+                        <h2 class= "col-12"><span>5-Day Forecast:</span></h2>
+                        <div id="fiveday"></div>
+                    </div>
+                </div>  
+            </div>
         </div>
     </div>
-
-    <scrip src="./assets/js/script.js"></scrip>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="./assets/js/script.js" ></script>
 </body>
-
-</html>
