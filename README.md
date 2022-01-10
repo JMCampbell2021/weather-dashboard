@@ -22,6 +22,9 @@ The API that was used in this weather dashboard was OpenWeather. This applicatio
 * JavaScript
 * HTML
 * OpenWeather API
+* Bootstrap
+* JQuery
+* Moment.js
 
 ## Website
 
