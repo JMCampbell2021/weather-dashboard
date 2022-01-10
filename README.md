@@ -4,7 +4,7 @@
 
 For this challenge/assignment I was tasked with building a weather dashboard that ran in the browser and feature dynamically udpated HTML and CSS. 
 
-The API that was used in this weather dashboard was OpenWeather. 
+The API that was used in this weather dashboard was OpenWeather. This application would have to run mulitple outlooks for multiple cities. 
 
 ## Acceptence Criteria
 <img width="592" alt="Screen Shot 2022-01-09 at 11 01 14 PM" src="https://user-images.githubusercontent.com/92699311/148717144-d7dc2d95-9974-4aa1-b8a1-5fc2946e6846.png">
