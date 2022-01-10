@@ -1,6 +1,6 @@
 # Weather Dashboard
 
-## Discription
+## Description
 
 For this challenge/assignment I was tasked with building a weather dashboard that ran in the browser and feature dynamically udpated HTML and CSS. 
 
